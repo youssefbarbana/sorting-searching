@@ -1,0 +1,18 @@
+PROCEDURE insertion_sort(VAR arr : ARRAY_OF INTEGER[], n : INTEGER)
+VAR
+    i,j : INTEGER
+BEGIN
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        Read(arr[i])
+    END_FOR
+
+    FOR i FROM 1 TO n-1 STEP 1  DO
+        let element = arr[i]
+        j = i-1
+        WHILE (j >= 0 && arr[j] > element) DO
+            arr[j+1] = arr[j]
+            j = j - 1
+        END_WHILE
+        arr[j+1] = element
+    END_FOR
+END
